@@ -16,42 +16,46 @@ const int IINF = INT_MAX;
 const int INF = 0x3f3f3f3f;
 const ll lINF = 0x3f3f3f3f3f3f3f3fll;
 
-int n, m, ans = 0;
-int mapa[MAX][MAX];
-int visitado[MAX][MAX];
+int n, m, mapa[MAX][MAX], visitado[MAX][MAX], ans = 0, qtd;
+int dx[] = {-1, 0, 1, 0};
+int dy[] = {0, 1, 0, -1};
 
-
-bool ok(int x, int y, int* qtd) {
-    if (mapa[x][y] == 0) {
-        (*qtd)++;
+bool ok(int i, int j) {
+    if (visitado[i][j]) return false;
+    if (mapa[i][j] == 0) {
+        qtd++;
         return false;
-    } else if (visitado[x][y]) return false;
-    visitado[x][y] = 1;
+    }
     return true;
 }
 
 void bfs(int i, int j) {
     queue<pair<int, int>> q;
-    visitado[i][j] = 1;
     q.push(make_pair(i, j));
+
     while (!q.empty()) {
-        pair<int,int> current = q.front();
+        pair<int, int> current = q.front();
         q.pop();
         int x = current.first, y = current.second;
-        int qtd = 0;
-        if (ok(x, y+1, &qtd)) q.push(make_pair(x, y+1));
-        if (ok(x, y-1, &qtd)) q.push(make_pair(x, y-1));
-        if (ok(x+1, y, &qtd)) q.push(make_pair(x+1, y));
-        if (ok(x-1, y, &qtd)) q.push(make_pair(x-1, y));
+        visitado[x][y] = 1;
+        qtd = 0;
+        for (int k = 0; k < 4; k++) {
+            int vizinhoX = x + dx[k];
+            int vizinhoY = y + dy[k];
+            if (ok(vizinhoX, vizinhoY)) {
+                visitado[vizinhoX][vizinhoY] = 1;
+                q.push(make_pair(vizinhoX, vizinhoY));
+            }
+        }
 
         if (qtd > 0) ans++;
+        
     }
 }
 
 int main() { _
-    
-    memset(visitado, 0, sizeof(visitado));
     memset(mapa, 0, sizeof(mapa));
+    memset(visitado, 0, sizeof(visitado));
     cin >> n >> m;
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
@@ -60,9 +64,11 @@ int main() { _
         }
     }
 
-    for (int i = 1; i <= n; i++) for (int j = 1; j <= m; j++) if (mapa[i][j] and !visitado[i][j]) bfs(i, j);
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            if (mapa[i][j] and !visitado[i][j]) bfs(i, j);
+        }
+    }
+
     cout << ans << endl;
-
-
-    return 0;
 }
