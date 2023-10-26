@@ -1,8 +1,3 @@
-/*
-Problema 2 - F91
-https://br.spoj.com/problems/F91/
-*/
-
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -18,18 +13,25 @@ const int MAX = 1e6+10;
 const int IINF = INT_MAX;
 const int INF = 0x3f3f3f3f;
 const ll lINF = 0x3f3f3f3f3f3f3f3fll;
- 
-int f91(int n) {
-    if (n <= 100) return f91(f91(n+11));
-    else return n - 10;
-}
+
 
 int main() { _
- 
+    
     int n;
+    int votos[101];
     while (cin >> n and n) {
-        cout << "f91(" << n << ") = " << f91(n) << endl;
+        memset(votos, 0, sizeof(votos));
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                int x; cin >> x;
+                if (x) votos[j]++;
+            }
+        }
+
+        int maior = 0;
+        for (int i = 0; i< n; i++) maior = max(maior, votos[i]);
+        cout << maior << endl;
+        
     }
     return 0;
- 
 }

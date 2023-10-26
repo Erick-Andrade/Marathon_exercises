@@ -1,8 +1,3 @@
-/*
-Problema 4 - Fatorial
-https://br.spoj.com/problems/FATORIA2/
-*/
-
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -14,20 +9,22 @@ using namespace std;
 #define pb push_back
 #define _ ios_base::sync_with_stdio(0); cin.tie(0);
  
-const int MAX = 1e6+10;
+const int MAX = 110;
 const int IINF = INT_MAX;
 const int INF = 0x3f3f3f3f;
 const ll lINF = 0x3f3f3f3f3f3f3f3fll;
- 
-int fat(int n) {
-    if (n <= 1) return 1;
-    return n * fat(n-1);
-}
 
-int main() { 
- 
-    int n; cin >> n;
-    cout << fat(n) << endl;
+int main() { _
+    
+    int m, n;
+    ll fat[21];
+    fat[0] = 1;
+    for (int i = 1; i < 21; i++) fat[i] = fat[i-1] * i;
+
+    while (cin >> m >> n) {
+        ll ans = fat[n] + fat[m];
+        cout << ans << endl;
+    }
+
     return 0;
- 
 }
