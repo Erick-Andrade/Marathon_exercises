@@ -1,5 +1,3 @@
-// https://www.beecrowd.com.br/judge/en/problems/view/1013?origem=1
-
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -17,9 +15,11 @@ const int INF = 0x3f3f3f3f;
 const ll lINF = 0x3f3f3f3f3f3f3f3fll;
  
 int main() { _
-    int a, b, c, maiorAb, maior; cin >> a >> b >> c;
-    maiorAb = (a + b + abs(a-b)) / 2;
-    maior = (maiorAb + c + abs(maiorAb - c)) / 2;
-    cout << maior << " eh o maior" << endl;
+    
+    int m, a, b, c; cin >> m >> a >> b;
+    c = m - (a + b);
+    int maior = (a + b + abs(a-b)) / 2;
+    maior = (maior + c + abs(maior-c)) / 2;
+    cout << maior << endl;
     return 0;
 }

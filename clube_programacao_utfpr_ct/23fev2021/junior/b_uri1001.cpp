@@ -1,5 +1,3 @@
-// https://www.beecrowd.com.br/judge/en/problems/view/1000?origem=1
-
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -17,6 +15,9 @@ const int INF = 0x3f3f3f3f;
 const ll lINF = 0x3f3f3f3f3f3f3f3fll;
  
 int main() { _
-    cout << "Hello World!" << endl;
+    
+    int a, b, sum; cin >> a >> b;
+    sum = a + b;
+    cout << "X = " << sum << endl;
     return 0;
 }
