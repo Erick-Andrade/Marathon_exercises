@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+#define ll long long
+#define endl '\n'
+#define f first
+#define s second
+#define pb push_back
+#define _ ios_base::sync_with_stdio(0); cin.tie(0);
+ 
+const int MAX = 1e6+10;
+const int IINF = INT_MAX;
+const int INF = 0x3f3f3f3f;
+const ll lINF = 0x3f3f3f3f3f3f3f3fll;
+ 
+int main() { _
+    
+    int dimensoes[3], janela[2];
+    for (int i = 0; i < 3; i++) cin >> dimensoes[i];
+    char ans = 'N';
+    for (int i = 0; i < 2; i++) cin >> janela[i];
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (j == i) continue;
+            if (janela[0] >= dimensoes[i] and janela[1] >= dimensoes[j]) ans = 'S';
+        }
+    }
+    
+    cout << ans << endl;
+    return 0;
+}
