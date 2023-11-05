@@ -13,15 +13,13 @@ const int MAX = 1e6+10;
 const int IINF = INT_MAX;
 const int INF = 0x3f3f3f3f;
 const ll lINF = 0x3f3f3f3f3f3f3f3fll;
- 
+
 int main() { _
- 
     int n, h, ans = 0; cin >> n >> h;
     while (n--) {
         int a; cin >> a;
-        if (a <= h) ans++;
+        if (h >= a) ans++;
     }
 
     cout << ans << endl;
-    return 0;
 }
