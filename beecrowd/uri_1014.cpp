@@ -16,8 +16,11 @@ const ll lINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main() { _
     
-    double r, a; cin >> r;
-    a = 3.14159 * r * r;
-    cout << "A=" << setprecision(4) << fixed << a << endl;
+    int x;
+    double y, ans; cin >> x >> y;
+    ans = x /y;
+    cout << setprecision(3) << fixed << ans << " km/l" << endl;
+    
+
     return 0;
 }

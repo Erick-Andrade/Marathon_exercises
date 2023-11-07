@@ -16,8 +16,10 @@ const ll lINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main() { _
     
-    double r, a; cin >> r;
-    a = 3.14159 * r * r;
-    cout << "A=" << setprecision(4) << fixed << a << endl;
+    int x; cin >> x;
+    if (x == 0) cout << "nulo" << endl;
+    else if (x > 0) cout << "positivo" << endl;
+    else cout << "negativo" << endl;
+    
     return 0;
 }

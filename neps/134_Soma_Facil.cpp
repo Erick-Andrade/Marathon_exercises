@@ -16,8 +16,9 @@ const ll lINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main() { _
     
-    double r, a; cin >> r;
-    a = 3.14159 * r * r;
-    cout << "A=" << setprecision(4) << fixed << a << endl;
+    int a, b, sum; cin >> a >> b;
+    sum = a + b;
+    cout << sum << endl;
+    
     return 0;
 }

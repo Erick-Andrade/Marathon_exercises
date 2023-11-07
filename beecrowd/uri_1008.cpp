@@ -16,8 +16,12 @@ const ll lINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main() { _
     
-    double r, a; cin >> r;
-    a = 3.14159 * r * r;
-    cout << "A=" << setprecision(4) << fixed << a << endl;
+    int number, worked_hours;
+    double received_per_hour, salary;
+    cin >> number >> worked_hours >> received_per_hour;
+    salary = received_per_hour * worked_hours;
+    cout << "NUMBER = " << number << endl;
+    cout << "SALARY = U$ " << setprecision(2) << fixed << salary << endl;
+    
     return 0;
 }

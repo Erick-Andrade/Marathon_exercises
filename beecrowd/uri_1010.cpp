@@ -16,8 +16,11 @@ const ll lINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main() { _
     
-    double r, a; cin >> r;
-    a = 3.14159 * r * r;
-    cout << "A=" << setprecision(4) << fixed << a << endl;
+    int code1, code2, units1, units2;
+    double price1, price2, price;
+    cin >> code1 >> units1 >> price1 >> code2 >> units2 >> price2;
+    price = units1 * price1 + units2 * price2;
+    cout << "VALOR A PAGAR: R$ " << setprecision(2) << fixed << price << endl;
+    
     return 0;
 }

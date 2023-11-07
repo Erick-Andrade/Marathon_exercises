@@ -16,8 +16,11 @@ const ll lINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main() { _
     
-    double r, a; cin >> r;
-    a = 3.14159 * r * r;
-    cout << "A=" << setprecision(4) << fixed << a << endl;
+    double a, b, average; cin >> a >> b;
+    average = (a + b) / 2;
+    if (average >= 7) cout << "Aprovado" << endl;
+    else if (average >= 4) cout << "Recuperacao" << endl;
+    else cout << "Reprovado" << endl;
+    
     return 0;
 }

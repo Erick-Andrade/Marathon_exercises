@@ -16,8 +16,8 @@ const ll lINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main() { _
     
-    double r, a; cin >> r;
-    a = 3.14159 * r * r;
-    cout << "A=" << setprecision(4) << fixed << a << endl;
+    double a, b, average; cin >> a >> b;
+    average = (a * 3.5 + b * 7.5) / 11;
+    cout << "MEDIA = " << setprecision(5) << fixed << average << endl;
     return 0;
 }
