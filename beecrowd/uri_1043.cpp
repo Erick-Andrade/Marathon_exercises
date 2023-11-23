@@ -16,16 +16,16 @@ const ll lINF = 0x3f3f3f3f3f3f3f3fll;
  
 int main() { _
  
-    int t, n, problems[26]; cin >> t;
-    string inp;
+    double a, b, c, ans; cin >> a >> b >> c;
 
-    while (t--) {
-        memset(problems, 0, sizeof problems);
-        cin >> n >> inp;
-        for (char c: inp) problems[c-65]++;
-        int ballons = n;
-        for (int i = 0; i < 26; i++) if (problems[i]) ballons++;
-        cout << ballons << endl;
+    if (a + b > c and a + c > b and b + c > a) {
+        ans = a + b + c;
+        cout << "Perimetro = " << setprecision(1) << fixed << ans << endl;
     }
+    else {
+        ans = ((a + b) * c) / 2;
+        cout << "Area = " << setprecision(1) << fixed << ans << endl;
+    }
+
     return 0;
 }

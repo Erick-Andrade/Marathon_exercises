@@ -16,16 +16,15 @@ const ll lINF = 0x3f3f3f3f3f3f3f3fll;
  
 int main() { _
  
-    int t, n, problems[26]; cin >> t;
-    string inp;
+    string inp; cin >> inp;
+    char pos = 'a';
+    int rotations = 0;
 
-    while (t--) {
-        memset(problems, 0, sizeof problems);
-        cin >> n >> inp;
-        for (char c: inp) problems[c-65]++;
-        int ballons = n;
-        for (int i = 0; i < 26; i++) if (problems[i]) ballons++;
-        cout << ballons << endl;
+    for (auto c: inp) {
+        rotations += min(abs(c - pos), 26 - abs(c - pos));
+        pos = c;
     }
+
+    cout << rotations << endl;
     return 0;
 }

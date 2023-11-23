@@ -15,17 +15,10 @@ const int INF = 0x3f3f3f3f;
 const ll lINF = 0x3f3f3f3f3f3f3f3fll;
  
 int main() { _
- 
-    int t, n, problems[26]; cin >> t;
-    string inp;
-
-    while (t--) {
-        memset(problems, 0, sizeof problems);
-        cin >> n >> inp;
-        for (char c: inp) problems[c-65]++;
-        int ballons = n;
-        for (int i = 0; i < 26; i++) if (problems[i]) ballons++;
-        cout << ballons << endl;
-    }
+    vector<int> nums(10);
+    for (int i = 0; i < 10; i++) cin >> nums[i];
+    for (int i = 0; i < 5; i++) swap(nums[i], nums[9-i]);
+    for (int i = 0; i < 10; i++) cout << nums[i] << endl;
     return 0;
+ 
 }

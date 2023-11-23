@@ -15,17 +15,16 @@ const int INF = 0x3f3f3f3f;
 const ll lINF = 0x3f3f3f3f3f3f3f3fll;
  
 int main() { _
- 
-    int t, n, problems[26]; cin >> t;
-    string inp;
-
-    while (t--) {
-        memset(problems, 0, sizeof problems);
-        cin >> n >> inp;
-        for (char c: inp) problems[c-65]++;
-        int ballons = n;
-        for (int i = 0; i < 26; i++) if (problems[i]) ballons++;
-        cout << ballons << endl;
+    int nums[10], x, ans = 0;
+    for (int i = 0; i < 10; i++) cin >> nums[i];
+    cin >> x;
+    for (int i = 0; i < 10; i++) if (x == nums[i]) {
+        ans = 1;
+        break;
     }
+
+    if (ans) cout << "SIM" << endl;
+    else cout << "NAO" << endl;
+
     return 0;
 }
