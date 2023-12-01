@@ -15,7 +15,7 @@ const int INF = 0x3f3f3f3f;
 const ll lINF = 0x3f3f3f3f3f3f3f3fll;
  
 int points[10][10] = {0};
-int main() { 
+int main() { _
 
     for (int i = 0; i < 5; i++) {
         for (int j = i; j < 10-i; j++) {
@@ -27,14 +27,18 @@ int main() {
     }
 
 
-    
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            cout << points[i][j] << " ";
+    int t; cin >> t;
+    while (t--) {
+        int ans = 0;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                char c; cin >> c;
+                if (c == 'X') ans += points[i][j];
+            }
         }
 
-        cout << endl;
-    }
+        cout << ans << endl;
+    }    
 
 
     
